@@ -368,13 +368,13 @@ footer p{max-width:52ch}
       <div class="cta">
         <a class="btn btn-white" id="apkBtn" href="downloads/taleem-sathi.apk" download>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="M7 10l5 5 5-5"/><path d="M5 20h14"/></svg>
-          <span id="apkLabel">APK download karein</span>
+          <span id="apkLabel">Download Android App</span>
         </a>
         <a class="btn btn-ghost" href="app/">Browser mein istemal karein</a>
       </div>
       <p class="note" id="apkNote">Android 7 ya us se naya phone • internet zaroori hai</p>
       <ol class="install">
-        <li><div><b>APK download karein</b><span>Upar wala button dabayein. File phone ke Downloads mein aa jayegi.</span></div></li>
+        <li><div><b>"Download Android App" dabayein</b><span>Yeh page apne phone ke Chrome mein kholein aur upar wala button dabayein.</span></div></li>
         <li><div><b>"Install unknown apps" ki ijazat dein</b><span>File kholne par Android poochega. Settings mein apne browser ke liye "Allow" karein. Yeh sirf aik dafa hota hai.</span></div></li>
         <li><div><b>Taleem Sathi kholein</b><span>Install dabayein, phir app kholein aur "Kitab Talash", "Scholarship" ya "Study Buddy" chunein.</span></div></li>
       </ol>
@@ -447,10 +447,10 @@ footer p{max-width:52ch}
     const type = r.headers.get('content-type') || '';
     if (!r.ok || type.includes('text/html')) throw new Error('missing');
   }).catch(() => {
-    label.textContent = 'Android app jald aa rahi hai';
-    btn.setAttribute('aria-disabled', 'true');
-    btn.removeAttribute('href');
-    note.textContent = 'Tab tak app browser mein istemal karein: bilkul wohi features.';
+    // no APK file yet: install the app straight from Chrome instead
+    btn.setAttribute('href', 'app/?install=1');
+    btn.removeAttribute('download');
+    note.textContent = 'Button dabayein, phir "Install karein" dabayein. App phone ki home screen par aa jayegi.';
   });
 })();
 

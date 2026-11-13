@@ -1,6 +1,6 @@
 // Taleem Sathi service worker: keeps the app shell available offline.
 // Chat messages always go to the live agent (never cached).
-const CACHE = 'taleem-sathi-v1';
+const CACHE = 'taleem-sathi-v2';
 const SHELL = ['./', './index.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png'];
 
 self.addEventListener('install', (e) => {
